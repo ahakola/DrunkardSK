@@ -1576,7 +1576,7 @@ function DrunkardSK:FindHighRoller()
 			roll = OffspecList[i].roll;
 			name = OffspecList[i].name;
 			found = true;
-			break -- 1.5.0
+			--break -- 1.5.0
 		end
 	end
 	if (found) then
