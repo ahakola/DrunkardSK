@@ -11,7 +11,7 @@ before_script:
 #  - /home/travis/.luarocks/bin/luacheck . --no-color -q
 
 script:
-  - curl -s https://raw.githubusercontent.com/BigWigsMods/packager/master/release.sh | bash -s -- -p 18988 -g 1.13.2
+  - curl -s https://raw.githubusercontent.com/BigWigsMods/packager/master/release.sh | bash -s -- -p 18988 -g 1.13.5
 
 notifications:
   email:
