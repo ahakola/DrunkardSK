@@ -1,0 +1,30 @@
+name: Package and release
+
+on:
+  push:
+    tags:
+      - '**'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    env:
+      CF_API_KEY: ${{ secrets.CF_API_KEY }}
+      GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
+
+    steps:
+      - name: Clone project
+        uses: actions/checkout@v1
+
+      - name: Package and release for Classic
+        uses: BigWigsMods/packager@v1
+        with:
+          args: -g classic -p 18988
+
+      - name: Package and release for BCClassic
+        uses: BigWigsMods/packager@v1
+        with:
+          args: -g bcc -p 18988
+
+
