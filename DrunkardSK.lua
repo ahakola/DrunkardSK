@@ -788,7 +788,7 @@ function DrunkardSK:OnEnable()
 	--end
 --DrunkardSK:Print(HandleModifiedItemClick);
 	--set bids in list to ensure backwards compatability
-	local f = CreateFrame('Frame', 'DSKBidFrame', UIParent)
+	local f = CreateFrame('Frame', 'DSKBidFrame', UIParent, BackdropTemplateMixin and "BackdropTemplate") -- BackdropTemplateMixin added in BCClassic
 	f:Hide()
 
 	f:SetWidth(350);
@@ -872,7 +872,7 @@ function DrunkardSK:OnEnable()
 	f.openList:SetScript("OnClick", OpenListClick)
 
 
-	local l = CreateFrame('Frame', 'DSKListFrame', UIParent)
+	local l = CreateFrame('Frame', 'DSKListFrame', UIParent, BackdropTemplateMixin and "BackdropTemplate") -- BackdropTemplateMixin added in BCClassic
 	l:Hide()
 
 	l:SetWidth(250); 
@@ -1284,7 +1284,7 @@ function DrunkardSK:OnEnable()
 ]]
 
 	--confirm import frame
-	local c = CreateFrame('Frame', 'DSKConfirmFrame', UIParent);
+	local c = CreateFrame('Frame', 'DSKConfirmFrame', UIParent, BackdropTemplateMixin and "BackdropTemplate"); -- BackdropTemplateMixin added in BCClassic
 	c:Hide();
 
 	c:SetWidth(350); 
@@ -1438,7 +1438,7 @@ end
 function DrunkardSK:CreateTimeStamp(oldstamp)
 	local _, hour, minute = GameTime_GetGameTime(false);
 	--local _, month, day, year = CalendarGetDate();
-	local CalendarDate = C_DateAndTime.GetTodaysDate() -- CalendarGetDate() came in WotLK, C_DateAndTime was introduced in 8.1 and C_DateAndTime.GetTodaysDate() is available in Classic in 1.5.0, use C_DateAndTime.GetCurrentCalendarTime() on Retail
+	local CalendarDate = C_DateAndTime.GetTodaysDate and C_DateAndTime.GetTodaysDate() or C_DateAndTime.GetCurrentCalendarTime() -- CalendarGetDate() came in WotLK, C_DateAndTime was introduced in 8.1 and C_DateAndTime.GetTodaysDate() is available in Classic in 1.5.0, use C_DateAndTime.GetCurrentCalendarTime() on Retail
 	local month, day, year = CalendarDate.month, CalendarDate.day, CalendarDate.year
 	if (hour < 10) then
 		hour = "0"..hour;

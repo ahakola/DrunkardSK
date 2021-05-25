@@ -1,8 +1,8 @@
-[![Build Status](https://travis-ci.com/ahakola/DrunkardSK.svg?branch=master)](https://travis-ci.com/ahakola/DrunkardSK)
-
-**There is no Masterlooter in BfA so there is no use for this addon in Retail, but this should be usable in Classic.**
+**There is no Masterlooter in Shadowlands so there is no use for this addon in Retail, but this should be usable in Classic and BCClassic.**
 
 # Drunkard Suicide Kings
+
+https://www.curseforge.com/wow/addons/drunkardsk/
 
 A Suicide Kings loot distribution addon created for &lt;Drunkard&gt; of Bloodscalp. That does not mean it won't work perfectly well for your guild.
 
