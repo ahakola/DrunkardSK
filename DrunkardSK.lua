@@ -1721,6 +1721,8 @@ end
 --receive list broadcast from master via guild
 function DrunkardSK:ReceiveBroadcast(prefix, message, distribution, sender)
 	local success, nstamp, nlength, nlist, tstamp, tlength, tlist = DrunkardSK:Deserialize(message);
+	if not success then return; end
+
 	--if (Master == false) then
 		if (tonumber(nstamp) > DrunkardSK.db.realm.nStamp) then
 			DrunkardSK.db.realm.nStamp = tonumber(nstamp);
@@ -1743,6 +1745,8 @@ end
 --master rebroadcasts list update via guild to raid
 function DrunkardSK:ReceiveList(prefix, message, distribution, sender)
 	local success, nstamp, nlength, nlist, tstamp, tlength, tlist = DrunkardSK:Deserialize(message);
+	if not success then return; end
+
 	--if (Master) then
 		if (tonumber(nstamp) > DrunkardSK.db.realm.nStamp) then
 			DrunkardSK.db.realm.nStamp = tonumber(nstamp);
