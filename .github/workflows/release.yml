@@ -15,16 +15,21 @@ jobs:
 
     steps:
       - name: Clone project
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # gets git history for changelogs
 
       - name: Create Classic Package
-        uses: BigWigsMods/packager@v1
+        uses: BigWigsMods/packager@v2
         with:
           args: -g classic -p 18988
 
       - name: Create BCClassic Package
-        uses: BigWigsMods/packager@v1
+        uses: BigWigsMods/packager@v2
         with:
           args: -g bcc -p 18988
 
-
+      - name: Create WrathClassic Package
+        uses: BigWigsMods/packager@v2
+        with:
+          args: -g wrath -p 18988
