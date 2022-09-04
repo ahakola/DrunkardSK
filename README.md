@@ -1,4 +1,4 @@
-**There is no Masterlooter in Shadowlands so there is no use for this addon in Retail, but this should be usable in Classic and BCClassic.**
+**There is no Masterlooter in Shadowlands so there is no use for this addon in Retail, but this should be usable in Classic, BCClassic and WrathClassic.**
 
 # Drunkard Suicide Kings
 
