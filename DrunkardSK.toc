@@ -4,8 +4,8 @@
 ## Interface-BCC: 20504
 ## Interface-Wrath: 30400
 ## Title: Drunkard Suicide Kings
-## Notes: Suicide Kings for the guild Drunkard of Bloodscalp. Updated for Classic/BCClassic.
-## Author: Aaron Castor, updated for MoP/WoD/Legion/Classic/BCClassic by Kelzu
+## Notes: Suicide Kings for the guild Drunkard of Bloodscalp. Updated for Classic/BCClassic/WrathClassic.
+## Author: Aaron Castor, updated for MoP/WoD/Legion/Classic/BCClassic/WrathClassic by Kelzu
 ## Version: @project-version@
 ## SavedVariables: DrunkardSKDB
 ## OptionalDeps: Ace3

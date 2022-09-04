@@ -17,7 +17,7 @@ jobs:
       - name: Clone project
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # gets git history for changelogs
+          fetch-depth: 0
 
       - name: Create Classic Package
         uses: BigWigsMods/packager@v2
