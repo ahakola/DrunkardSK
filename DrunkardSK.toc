@@ -2,7 +2,7 @@
 ## Interface-Retail: 70300
 ## Interface-Classic: 11403
 ## Interface-BCC: 20504
-## Interface-Wrath: 30401
+## Interface-Wrath: 30402
 ## Title: Drunkard Suicide Kings
 ## Notes: Suicide Kings for the guild Drunkard of Bloodscalp. Updated for Classic/BCClassic/WrathClassic.
 ## Author: Aaron Castor, updated for MoP/WoD/Legion/Classic/BCClassic/WrathClassic by Kelzu
