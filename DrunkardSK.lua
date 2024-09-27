@@ -835,25 +835,29 @@ function DrunkardSK:OnEnable()
 	f.item:SetScript("OnClick", IconClick);
 
 	--bid button
-	f.bid = CreateFrame('Button', nil, f, "OptionsButtonTemplate")
+	f.bid = CreateFrame('Button', nil, f, "UIPanelButtonTemplate" and "UIPanelButtonTemplate" or "OptionsButtonTemplate") -- OptionsButtonTemplate removed in 10.0.0 and has been backported to Classics
+	f.bid:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	f.bid:SetText('Bid')
 	f.bid:SetPoint('TOPLEFT', 30, -40)
 	f.bid:SetScript('OnClick', BidClick)
 
 	--pass button
-	f.pass = CreateFrame('Button', nil, f, "OptionsButtonTemplate")
+	f.pass = CreateFrame('Button', nil, f, "UIPanelButtonTemplate" and "UIPanelButtonTemplate" or "OptionsButtonTemplate") -- OptionsButtonTemplate removed in 10.0.0 and has been backported to Classics
+	f.pass:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	f.pass:SetText('Pass')
 	f.pass:SetPoint('TOPRIGHT', -30, -65)
 	f.pass:SetScript('OnClick', PassClick)
 
 	--offspec button
-	f.offspec = CreateFrame('Button', nil, f, "OptionsButtonTemplate")
+	f.offspec = CreateFrame('Button', nil, f, "UIPanelButtonTemplate" and "UIPanelButtonTemplate" or "OptionsButtonTemplate") -- OptionsButtonTemplate removed in 10.0.0 and has been backported to Classics
+	f.offspec:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	f.offspec:SetText('Offspec')
 	f.offspec:SetPoint('TOPRIGHT', -30, -40)
 	f.offspec:SetScript('OnClick', OffspecClick)
 
 	--retract button
-	f.retract = CreateFrame('Button', nil, f, "OptionsButtonTemplate")
+	f.retract = CreateFrame('Button', nil, f, "UIPanelButtonTemplate" and "UIPanelButtonTemplate" or "OptionsButtonTemplate") -- OptionsButtonTemplate removed in 10.0.0 and has been backported to Classics
+	f.retract:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	f.retract:SetText('Retract')
 	f.retract:SetPoint('TOPLEFT', 30, -65)
 	f.retract:SetScript('OnClick', RetractClick)
@@ -923,46 +927,53 @@ function DrunkardSK:OnEnable()
 
 
 	--add button
-	l.add = CreateFrame('Button', 'ListAddButton', l, "OptionsButtonTemplate")
+	l.add = CreateFrame('Button', 'ListAddButton', l, "UIPanelButtonTemplate" and "UIPanelButtonTemplate" or "OptionsButtonTemplate") -- OptionsButtonTemplate removed in 10.0.0 and has been backported to Classics
+	l.add:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	l.add:SetText('Add')
 	l.add:SetPoint('TOPLEFT', 35, -28)
 	l.add:SetScript('OnClick', AddClick)
 
 	--delete button
-	l.del = CreateFrame('Button', nil, l, "OptionsButtonTemplate")
+	l.del = CreateFrame('Button', nil, l, "UIPanelButtonTemplate" and "UIPanelButtonTemplate" or "OptionsButtonTemplate") -- OptionsButtonTemplate removed in 10.0.0 and has been backported to Classics
+	l.del:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	l.del:SetText('Delete')
 	--l.del:SetPoint('LEFT', ListAddButton, 'RIGHT', 0, 0)
 	l.del:SetPoint('LEFT', l.add, 'RIGHT', 0, 0) -- 1.5.0
 	l.del:SetScript('OnClick', DeleteClick)
 
 	--murder button
-	l.murder = CreateFrame('Button', 'ListMurderButton', l, "OptionsButtonTemplate")
+	l.murder = CreateFrame('Button', 'ListMurderButton', l, "UIPanelButtonTemplate" and "UIPanelButtonTemplate" or "OptionsButtonTemplate") -- OptionsButtonTemplate removed in 10.0.0 and has been backported to Classics
+	l.murder:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	l.murder:SetText('Murder')
 	l.murder:SetPoint('BOTTOMLEFT', 35, 38)
 	l.murder:SetScript('OnClick', MurderClick)
 
 	--close bid button
-	l.closeBid = CreateFrame('Button', nil, l, "OptionsButtonTemplate")
+	l.closeBid = CreateFrame('Button', nil, l, "UIPanelButtonTemplate" and "UIPanelButtonTemplate" or "OptionsButtonTemplate") -- OptionsButtonTemplate removed in 10.0.0 and has been backported to Classics
+	l.closeBid:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	l.closeBid:SetText('Close Bid')
 	l.closeBid:SetPoint('BOTTOM', 0, 15)
 	l.closeBid:SetScript('OnClick', CloseBidClick)
 
 	--sync button
-	l.sync = CreateFrame('Button', nil, l, "OptionsButtonTemplate")
+	l.sync = CreateFrame('Button', nil, l, "UIPanelButtonTemplate" and "UIPanelButtonTemplate" or "OptionsButtonTemplate") -- OptionsButtonTemplate removed in 10.0.0 and has been backported to Classics
+	l.sync:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	l.sync:SetText('Sync')
 	--l.sync:SetPoint('LEFT', ListMurderButton, 'RIGHT', 0, 0)
 	l.sync:SetPoint('LEFT', l.murder, 'RIGHT', 0, 0) -- 1.5.0
 	l.sync:SetScript('OnClick', SyncClick)
 
 	--export button
-	l.export = CreateFrame('Button', 'ExportButton', l, "OptionsButtonTemplate")
+	l.export = CreateFrame('Button', 'ExportButton', l, "UIPanelButtonTemplate" and "UIPanelButtonTemplate" or "OptionsButtonTemplate") -- OptionsButtonTemplate removed in 10.0.0 and has been backported to Classics
+	l.export:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	l.export:SetText('Export')
 	l.export:SetPoint('BOTTOMLEFT', 35, 15)
 	l.export:SetScript('OnClick', ExportClick)
 	l.export:Hide();
 
 	--import button
-	l.import = CreateFrame('Button', nil, l, "OptionsButtonTemplate")
+	l.import = CreateFrame('Button', nil, l, "UIPanelButtonTemplate" and "UIPanelButtonTemplate" or "OptionsButtonTemplate") -- OptionsButtonTemplate removed in 10.0.0 and has been backported to Classics
+	l.import:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	l.import:SetText('Import')
 	--l.import:SetPoint('LEFT', ExportButton, 'RIGHT', 0, 0)
 	l.import:SetPoint('LEFT', l.export, 'RIGHT', 0, 0) -- 1.5.0
@@ -1305,13 +1316,15 @@ function DrunkardSK:OnEnable()
 	c.title:SetPoint('TOP', 0, -15)
 
 	--accept button
-	c.accept = CreateFrame('Button', 'AcceptButton', c, "OptionsButtonTemplate")
+	c.accept = CreateFrame('Button', 'AcceptButton', c, "UIPanelButtonTemplate" and "UIPanelButtonTemplate" or "OptionsButtonTemplate") -- OptionsButtonTemplate removed in 10.0.0 and has been backported to Classics
+	c.accept:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	c.accept:SetText('Accept')
 	c.accept:SetPoint('BOTTOMLEFT', 35, 15)
 	c.accept:SetScript('OnClick', AcceptClick)
 
 	--decline button
-	c.decline = CreateFrame('Button', nil, c, "OptionsButtonTemplate")
+	c.decline = CreateFrame('Button', nil, c, "UIPanelButtonTemplate" and "UIPanelButtonTemplate" or "OptionsButtonTemplate") -- OptionsButtonTemplate removed in 10.0.0 and has been backported to Classics
+	c.decline:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	c.decline:SetText('Decline')
 	c.decline:SetPoint('BOTTOMRIGHT', -35, 15)
 	c.decline:SetScript('OnClick', DeclineClick)
