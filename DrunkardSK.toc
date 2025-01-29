@@ -1,4 +1,4 @@
-## Interface: 11505, 20504, 30403, 40401, 70300
+## Interface: 11506, 20504, 30403, 40401, 70300
 ## Title: Drunkard Suicide Kings
 ## Notes: Suicide Kings for the guild Drunkard of Bloodscalp. Updated for Classic Era / Cata.
 ## Author: Aaron Castor, updated for MoP/WoD/Legion/Classics by Kelzu
