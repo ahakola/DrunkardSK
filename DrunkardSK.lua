@@ -1412,7 +1412,7 @@ end]]
 --is masterlooter and guild officer
 function DrunkardSK:IsMaster()
 	local ret
-	local _, master, _ = GetLootMethod();
+	local _, master, _ = C_PartyInfo and C_PartyInfo.GetLootMethod() or GetLootMethod(); -- Fix for MoP Classic
 
 	if (master ~= nil) and (master == 0) and (DrunkardSK:IsOfficer()) then
 		ret = true;
