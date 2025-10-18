@@ -1521,7 +1521,13 @@ function DrunkardSK:SetOpenItem(item)
 		DSKBidFrame.link:AddMessage(item)
 
 		SetItemButtonTexture(DSKBidFrame.item, itemIcon)
-		SetItemButtonNormalTextureVertexColor(DSKBidFrame.item, r, g, b)
+		--SetItemButtonNormalTextureVertexColor(DSKBidFrame.item, r, g, b)
+		--DevTools_Dump(r)
+		if type(r) == "table" then -- At least MoP Classic uses the new ColorManager stuff?
+			DSKBidFrame.item:GetNormalTexture():SetVertexColor(r.r, r.g, r.b)
+		else
+			DSKBidFrame.item:GetNormalTexture():SetVertexColor(r, g, b)
+		end
 	end)
 end
 
