@@ -1865,5 +1865,3 @@ function DrunkardSK:DSK_HandleModifiedItemClick(item)
 		end
 	end
 end
-
-
