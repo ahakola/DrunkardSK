@@ -1453,7 +1453,7 @@ function DrunkardSK:CreateTimeStamp(oldstamp)
 	local _, hour, minute = GameTime_GetGameTime and GameTime_GetGameTime(false) or nil, GetGameTime(); -- Future proofing
 	--local _, month, day, year = CalendarGetDate();
 	local CalendarDate = C_DateAndTime.GetTodaysDate and C_DateAndTime.GetTodaysDate() or C_DateAndTime.GetCurrentCalendarTime() -- CalendarGetDate() came in WotLK, C_DateAndTime was introduced in 8.1 and C_DateAndTime.GetTodaysDate() is available in Classic in 1.5.0, use C_DateAndTime.GetCurrentCalendarTime() on Retail
-	local month, day, year = CalendarDate.month, CalendarDate.day, CalendarDate.year
+	local month, day, year = CalendarDate.month, CalendarDate.monthDay or CalendarDate.day, CalendarDate.year -- C_DateAndTime.GetCurrentCalendarTime() returns the day of the month in 'monthDay'
 	if (hour < 10) then
 		hour = "0"..hour;
 	end
