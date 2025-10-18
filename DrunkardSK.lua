@@ -418,6 +418,8 @@ local function ClickITab()
 	DSKListFrame.editScroll:Show()
 	--DSKListFrame.selectedEntry = 0;
 	--ScrollList_Update();
+	-- Add the default description back to the I/E tab if it was cleared by user earlier.
+	DSKListFrame.editArea:SetText("To Export: Select a list below and hit export.\n\nTo Import: Fill this box with the following format. Make sure names are capitalized correctly. Make sure the correct list is selected below and hit import.\n\nFormat:\n1. Name Class\n2. Name Class\netc")
 end
 
 
