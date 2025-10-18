@@ -60,22 +60,26 @@ end -- Added by Kelzu 1.3.6
 
 --on loot item icon mouseover
 local function IconEnter(self)
-	GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
+	--GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
 	--GameTooltip:SetPoint("BOTTOMRIGHT", self, "TOPLEFT");
-	GameTooltip:SetHyperlink(ItemLink);
-	GameTooltip:Show();
+	--GameTooltip:SetHyperlink(ItemLink);
+	--GameTooltip:Show();
+	ItemRefTooltip:SetOwner(self, "ANCHOR_RIGHT"); -- Someone please tell me better way to do this!
+	SetItemRef(ItemLink, nil, self, self) -- Someone please tell me better way to do this!
 	CursorUpdate(self);
 end
 
 --no more loot item icon mouseover
 local function IconLeave()
-	GameTooltip:Hide();
+	--GameTooltip:Hide();
+	ItemRefTooltip:Hide() -- Someone please tell me better way to do this!
 	ResetCursor();
 end
 
 --icon on update
 local function IconUpdate(self)
-	if ( GameTooltip:IsOwned(self) ) then
+	--if ( GameTooltip:IsOwned(self) ) then
+	if ( ItemRefTooltip:IsOwned(self) ) then -- Someone please tell me better way to do this!
 		IconEnter(self);
 	end
 	CursorOnUpdate(self);
