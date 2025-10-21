@@ -991,7 +991,8 @@ function DrunkardSK:OnEnable()
 
 	--normal radio button
 	l.normalRadio = CreateFrame("CheckButton", "NormalRadioButton", l, "UIRadioButtonTemplate")
-	NormalRadioButtonText:SetText('Normal List')
+	--NormalRadioButtonText:SetText('Normal List')
+	l.normalRadio.text:SetText('Normal List')
 	l.normalRadio:SetPoint('BOTTOMLEFT', 35, 40)
 	l.normalRadio:SetScript('OnClick', NormalRadioClick)
 	l.normalRadio:SetChecked(1)
@@ -999,7 +1000,8 @@ function DrunkardSK:OnEnable()
 
 	--token radio button
 	l.tokenRadio = CreateFrame("CheckButton", "TokenRadioButton", l, "UIRadioButtonTemplate")
-	TokenRadioButtonText:SetText('Token List')
+	--TokenRadioButtonText:SetText('Token List')
+	l.tokenRadio.text:SetText('Token List')
 	--l.tokenRadio:SetPoint('LEFT', NormalRadioButton, 'RIGHT', 75, 0)
 	l.tokenRadio:SetPoint('LEFT', l.normalRadio, 'RIGHT', 75, 0) -- 1.5.0
 	l.tokenRadio:SetScript('OnClick', TokenRadioClick)
