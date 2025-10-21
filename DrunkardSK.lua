@@ -797,7 +797,7 @@ function DrunkardSK:OnEnable()
 	--end
 --DrunkardSK:Print(HandleModifiedItemClick);
 	--set bids in list to ensure backwards compatability
-	local f = CreateFrame('Frame', 'DSKBidFrame', UIParent, BackdropTemplateMixin and "BackdropTemplate") -- BackdropTemplateMixin added in BCClassic
+	local f = CreateFrame('Frame', 'DSKBidFrame', UIParent, "BackdropTemplate") -- BackdropTemplateMixin added in BCClassic
 	f:Hide()
 
 	f:SetWidth(350);
@@ -844,28 +844,28 @@ function DrunkardSK:OnEnable()
 	f.item:SetScript("OnClick", IconClick);
 
 	--bid button
-	f.bid = CreateFrame('Button', nil, f, "UIPanelButtonTemplate" and "UIPanelButtonTemplate" or "OptionsButtonTemplate") -- OptionsButtonTemplate removed in 10.0.0 and has been backported to Classics
+	f.bid = CreateFrame('Button', nil, f, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate was removed in 10.0.0
 	f.bid:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	f.bid:SetText('Bid')
 	f.bid:SetPoint('TOPLEFT', 30, -40)
 	f.bid:SetScript('OnClick', BidClick)
 
 	--pass button
-	f.pass = CreateFrame('Button', nil, f, "UIPanelButtonTemplate" and "UIPanelButtonTemplate" or "OptionsButtonTemplate") -- OptionsButtonTemplate removed in 10.0.0 and has been backported to Classics
+	f.pass = CreateFrame('Button', nil, f, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate was removed in 10.0.0
 	f.pass:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	f.pass:SetText('Pass')
 	f.pass:SetPoint('TOPRIGHT', -30, -65)
 	f.pass:SetScript('OnClick', PassClick)
 
 	--offspec button
-	f.offspec = CreateFrame('Button', nil, f, "UIPanelButtonTemplate" and "UIPanelButtonTemplate" or "OptionsButtonTemplate") -- OptionsButtonTemplate removed in 10.0.0 and has been backported to Classics
+	f.offspec = CreateFrame('Button', nil, f, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate was removed in 10.0.0
 	f.offspec:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	f.offspec:SetText('Offspec')
 	f.offspec:SetPoint('TOPRIGHT', -30, -40)
 	f.offspec:SetScript('OnClick', OffspecClick)
 
 	--retract button
-	f.retract = CreateFrame('Button', nil, f, "UIPanelButtonTemplate" and "UIPanelButtonTemplate" or "OptionsButtonTemplate") -- OptionsButtonTemplate removed in 10.0.0 and has been backported to Classics
+	f.retract = CreateFrame('Button', nil, f, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate was removed in 10.0.0
 	f.retract:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	f.retract:SetText('Retract')
 	f.retract:SetPoint('TOPLEFT', 30, -65)
@@ -885,7 +885,7 @@ function DrunkardSK:OnEnable()
 	f.openList:SetScript("OnClick", OpenListClick)
 
 
-	local l = CreateFrame('Frame', 'DSKListFrame', UIParent, BackdropTemplateMixin and "BackdropTemplate") -- BackdropTemplateMixin added in BCClassic
+	local l = CreateFrame('Frame', 'DSKListFrame', UIParent, "BackdropTemplate") -- BackdropTemplateMixin added in BCClassic
 	l:Hide()
 
 	l:SetWidth(250); 
@@ -936,14 +936,14 @@ function DrunkardSK:OnEnable()
 
 
 	--add button
-	l.add = CreateFrame('Button', 'ListAddButton', l, "UIPanelButtonTemplate" and "UIPanelButtonTemplate" or "OptionsButtonTemplate") -- OptionsButtonTemplate removed in 10.0.0 and has been backported to Classics
+	l.add = CreateFrame('Button', 'ListAddButton', l, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate was removed in 10.0.0
 	l.add:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	l.add:SetText('Add')
 	l.add:SetPoint('TOPLEFT', 35, -28)
 	l.add:SetScript('OnClick', AddClick)
 
 	--delete button
-	l.del = CreateFrame('Button', nil, l, "UIPanelButtonTemplate" and "UIPanelButtonTemplate" or "OptionsButtonTemplate") -- OptionsButtonTemplate removed in 10.0.0 and has been backported to Classics
+	l.del = CreateFrame('Button', nil, l, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate was removed in 10.0.0
 	l.del:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	l.del:SetText('Delete')
 	--l.del:SetPoint('LEFT', ListAddButton, 'RIGHT', 0, 0)
@@ -951,21 +951,21 @@ function DrunkardSK:OnEnable()
 	l.del:SetScript('OnClick', DeleteClick)
 
 	--murder button
-	l.murder = CreateFrame('Button', 'ListMurderButton', l, "UIPanelButtonTemplate" and "UIPanelButtonTemplate" or "OptionsButtonTemplate") -- OptionsButtonTemplate removed in 10.0.0 and has been backported to Classics
+	l.murder = CreateFrame('Button', 'ListMurderButton', l, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate was removed in 10.0.0
 	l.murder:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	l.murder:SetText('Murder')
 	l.murder:SetPoint('BOTTOMLEFT', 35, 38)
 	l.murder:SetScript('OnClick', MurderClick)
 
 	--close bid button
-	l.closeBid = CreateFrame('Button', nil, l, "UIPanelButtonTemplate" and "UIPanelButtonTemplate" or "OptionsButtonTemplate") -- OptionsButtonTemplate removed in 10.0.0 and has been backported to Classics
+	l.closeBid = CreateFrame('Button', nil, l, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate was removed in 10.0.0
 	l.closeBid:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	l.closeBid:SetText('Close Bid')
 	l.closeBid:SetPoint('BOTTOM', 0, 15)
 	l.closeBid:SetScript('OnClick', CloseBidClick)
 
 	--sync button
-	l.sync = CreateFrame('Button', nil, l, "UIPanelButtonTemplate" and "UIPanelButtonTemplate" or "OptionsButtonTemplate") -- OptionsButtonTemplate removed in 10.0.0 and has been backported to Classics
+	l.sync = CreateFrame('Button', nil, l, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate was removed in 10.0.0
 	l.sync:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	l.sync:SetText('Sync')
 	--l.sync:SetPoint('LEFT', ListMurderButton, 'RIGHT', 0, 0)
@@ -973,7 +973,7 @@ function DrunkardSK:OnEnable()
 	l.sync:SetScript('OnClick', SyncClick)
 
 	--export button
-	l.export = CreateFrame('Button', 'ExportButton', l, "UIPanelButtonTemplate" and "UIPanelButtonTemplate" or "OptionsButtonTemplate") -- OptionsButtonTemplate removed in 10.0.0 and has been backported to Classics
+	l.export = CreateFrame('Button', 'ExportButton', l, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate was removed in 10.0.0
 	l.export:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	l.export:SetText('Export')
 	l.export:SetPoint('BOTTOMLEFT', 35, 15)
@@ -981,7 +981,7 @@ function DrunkardSK:OnEnable()
 	l.export:Hide();
 
 	--import button
-	l.import = CreateFrame('Button', nil, l, "UIPanelButtonTemplate" and "UIPanelButtonTemplate" or "OptionsButtonTemplate") -- OptionsButtonTemplate removed in 10.0.0 and has been backported to Classics
+	l.import = CreateFrame('Button', nil, l, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate was removed in 10.0.0
 	l.import:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	l.import:SetText('Import')
 	--l.import:SetPoint('LEFT', ExportButton, 'RIGHT', 0, 0)
@@ -1306,7 +1306,7 @@ function DrunkardSK:OnEnable()
 ]]
 
 	--confirm import frame
-	local c = CreateFrame('Frame', 'DSKConfirmFrame', UIParent, BackdropTemplateMixin and "BackdropTemplate"); -- BackdropTemplateMixin added in BCClassic
+	local c = CreateFrame('Frame', 'DSKConfirmFrame', UIParent, "BackdropTemplate"); -- BackdropTemplateMixin added in BCClassic
 	c:Hide();
 
 	c:SetWidth(350); 
@@ -1327,14 +1327,14 @@ function DrunkardSK:OnEnable()
 	c.title:SetPoint('TOP', 0, -15)
 
 	--accept button
-	c.accept = CreateFrame('Button', 'AcceptButton', c, "UIPanelButtonTemplate" and "UIPanelButtonTemplate" or "OptionsButtonTemplate") -- OptionsButtonTemplate removed in 10.0.0 and has been backported to Classics
+	c.accept = CreateFrame('Button', 'AcceptButton', c, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate was removed in 10.0.0
 	c.accept:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	c.accept:SetText('Accept')
 	c.accept:SetPoint('BOTTOMLEFT', 35, 15)
 	c.accept:SetScript('OnClick', AcceptClick)
 
 	--decline button
-	c.decline = CreateFrame('Button', nil, c, "UIPanelButtonTemplate" and "UIPanelButtonTemplate" or "OptionsButtonTemplate") -- OptionsButtonTemplate removed in 10.0.0 and has been backported to Classics
+	c.decline = CreateFrame('Button', nil, c, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate was removed in 10.0.0
 	c.decline:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	c.decline:SetText('Decline')
 	c.decline:SetPoint('BOTTOMRIGHT', -35, 15)
@@ -1423,7 +1423,8 @@ end]]
 --is masterlooter and guild officer
 function DrunkardSK:IsMaster()
 	local ret
-	local _, master, _ = C_PartyInfo and C_PartyInfo.GetLootMethod() or GetLootMethod(); -- Fix for MoP Classic
+	--local _, master, _ = GetLootMethod();
+	local _, master = C_PartyInfo.GetLootMethod();
 
 	if (master ~= nil) and (master == 0) and (DrunkardSK:IsOfficer()) then
 		ret = true;
@@ -1461,10 +1462,10 @@ end
 --create list timestamp
 function DrunkardSK:CreateTimeStamp(oldstamp)
 	--local _, hour, minute = GameTime_GetGameTime(false);
-	local _, hour, minute = GameTime_GetGameTime and GameTime_GetGameTime(false) or nil, GetGameTime(); -- Future proofing
+	local hour, minute = GetGameTime(); -- Future proofing
 	--local _, month, day, year = CalendarGetDate();
-	local CalendarDate = C_DateAndTime.GetTodaysDate and C_DateAndTime.GetTodaysDate() or C_DateAndTime.GetCurrentCalendarTime() -- CalendarGetDate() came in WotLK, C_DateAndTime was introduced in 8.1 and C_DateAndTime.GetTodaysDate() is available in Classic in 1.5.0, use C_DateAndTime.GetCurrentCalendarTime() on Retail
-	local month, day, year = CalendarDate.month, CalendarDate.monthDay or CalendarDate.day, CalendarDate.year -- C_DateAndTime.GetCurrentCalendarTime() returns the day of the month in 'monthDay'
+	local CalendarDate = C_DateAndTime.GetTodaysDate(); -- C_DateAndTime.GetCurrentCalendarTime()
+	local month, day, year = CalendarDate.month, CalendarDate.day, CalendarDate.year; -- C_DateAndTime.GetCurrentCalendarTime() returns the day of the month in 'monthDay', so use 'CalendarDate.monthDay or CalendarDate.day'
 	if (hour < 10) then
 		hour = "0"..hour;
 	end
@@ -1521,18 +1522,16 @@ function DrunkardSK:SetOpenItem(item)
 	local i = Item:CreateFromItemLink(item)
 	i:ContinueOnItemLoad(function() -- Information should be cached now
 		local itemIcon = i:GetItemIcon()
-		local r, g, b = i:GetItemQualityColor()
+		--local r, g, b = i:GetItemQualityColor()
+		local color = i:GetItemQualityColor()
 
 		DSKBidFrame.link:AddMessage(item)
 
 		SetItemButtonTexture(DSKBidFrame.item, itemIcon)
 		--SetItemButtonNormalTextureVertexColor(DSKBidFrame.item, r, g, b)
 		--DevTools_Dump(r)
-		if type(r) == "table" then -- At least MoP Classic uses the new ColorManager stuff?
-			DSKBidFrame.item:GetNormalTexture():SetVertexColor(r.r, r.g, r.b)
-		else
-			DSKBidFrame.item:GetNormalTexture():SetVertexColor(r, g, b)
-		end
+		--DSKBidFrame.item:GetNormalTexture():SetVertexColor(r, g, b)
+		DSKBidFrame.item:GetNormalTexture():SetVertexColor(color.r, color.g, color.b)
 	end)
 end
 
