@@ -551,12 +551,12 @@ end
 local function CloseBidClick(self, button, down)
 	if (HighName ~= "") then
 		local list = DrunkardSK:WhichList();
-		SendChatMessage(HighName.." wins "..ItemLink.."!", "RAID");
+		C_ChatInfo.SendChatMessage(HighName.." wins "..ItemLink.."!", "RAID"); -- C_ChatInfo.SendChatMessage was introduced in 11.2.0
 		GiveLoot(ItemLink, HighName) -- Added by Kelzu 1.3.6
 		Suicide(HighRank, list);
 		DrunkardSK:SendCommMessage("DSKBroadcast", DrunkardSK:Serialize(DrunkardSK.db.realm.nStamp, DrunkardSK.db.realm.nLength, DrunkardSK.db.realm.nList, DrunkardSK.db.realm.tStamp, DrunkardSK.db.realm.tLength, DrunkardSK.db.realm.tList), "GUILD");
 	elseif (HighRoller ~= "") then
-		SendChatMessage(HighRoller.." wins "..ItemLink.."!", "RAID");
+		C_ChatInfo.SendChatMessage(HighRoller.." wins "..ItemLink.."!", "RAID"); -- C_ChatInfo.SendChatMessage was introduced in 11.2.0
 		GiveLoot(ItemLink, HighRoller) -- Added by Kelzu 1.3.6
 	end
 
@@ -1713,7 +1713,7 @@ function DrunkardSK:ReceiveBid(prefix, message, distribution, sender)
 					local roll = DrunkardSK:AddRoller(bidder);
 
 					--display in raid chat
-					SendChatMessage(bidder.." rolls "..roll.." (1-1000)" , "RAID");
+					C_ChatInfo.SendChatMessage(bidder.." rolls "..roll.." (1-1000)" , "RAID"); -- C_ChatInfo.SendChatMessage was introduced in 11.2.0
 					HighRoller, HighRoll = DrunkardSK:FindHighRoller();
 				end
 
@@ -1721,7 +1721,7 @@ function DrunkardSK:ReceiveBid(prefix, message, distribution, sender)
 
 				--if (BidsReceived == GetNumRaidMembers()) then
 				if (BidsReceived == GetNumGroupMembers()) then -- Fixed by Kelzu
-					SendChatMessage("All bids received!" , "RAID");
+					C_ChatInfo.SendChatMessage("All bids received!" , "RAID"); -- C_ChatInfo.SendChatMessage was introduced in 11.2.0
 				end
 			end
 
@@ -1808,7 +1808,7 @@ function DrunkardSK:RetractBid(prefix, message, distribution, sender)
 
 				if(bidType == "bid") then
 					DrunkardSK:RemoveBidder(bidder);
-					SendChatMessage(bidder.." has retracted their bid." , "RAID");
+					C_ChatInfo.SendChatMessage(bidder.." has retracted their bid." , "RAID"); -- C_ChatInfo.SendChatMessage was introduced in 11.2.0
 
 					if(BidList[1] ~= nil) then
 						HighRank = BidList[1];
@@ -1825,9 +1825,9 @@ function DrunkardSK:RetractBid(prefix, message, distribution, sender)
 				elseif (bidType == "offspec") then
 					DrunkardSK:RemoveRoller(bidder);
 					HighRoller, HighRoll = DrunkardSK:FindHighRoller();
-					SendChatMessage(bidder.." has retracted their roll." , "RAID");
+					C_ChatInfo.SendChatMessage(bidder.." has retracted their roll." , "RAID"); -- C_ChatInfo.SendChatMessage was introduced in 11.2.0
 				elseif (bidType == "pass") then
-					SendChatMessage(bidder.." has retracted their pass." , "RAID");
+					C_ChatInfo.SendChatMessage(bidder.." has retracted their pass." , "RAID"); -- C_ChatInfo.SendChatMessage was introduced in 11.2.0
 				end
 				DrunkardSK:UpdateWinner();
 			end
