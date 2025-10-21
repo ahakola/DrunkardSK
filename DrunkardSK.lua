@@ -60,26 +60,29 @@ end -- Added by Kelzu 1.3.6
 
 --on loot item icon mouseover
 local function IconEnter(self)
-	--GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
+	--/dump GameTooltip:SetHyperlink((select(2, GetItemInfo(117)))) -- Era Test
+	--/dump GameTooltip:SetHyperlink((select(2, GetItemInfo(82444)))) -- MoP Test
+
+	GameTooltip:SetOwner(self, "ANCHOR_RIGHT");
 	--GameTooltip:SetPoint("BOTTOMRIGHT", self, "TOPLEFT");
-	--GameTooltip:SetHyperlink(ItemLink);
-	--GameTooltip:Show();
-	ItemRefTooltip:SetOwner(self, "ANCHOR_RIGHT"); -- Someone please tell me better way to do this!
-	SetItemRef(ItemLink, nil, self, self) -- Someone please tell me better way to do this!
+	GameTooltip:SetHyperlink(ItemLink);
+	GameTooltip:Show();
+	--ItemRefTooltip:SetOwner(self, "ANCHOR_RIGHT"); -- Bad alternative for GameTooltip
+	--SetItemRef(ItemLink, nil, self, self) -- Bad alternative for GameTooltip
 	CursorUpdate(self);
 end
 
 --no more loot item icon mouseover
 local function IconLeave()
-	--GameTooltip:Hide();
-	ItemRefTooltip:Hide() -- Someone please tell me better way to do this!
+	GameTooltip:Hide();
+	--ItemRefTooltip:Hide() -- Bad alternative for GameTooltip
 	ResetCursor();
 end
 
 --icon on update
 local function IconUpdate(self)
-	--if ( GameTooltip:IsOwned(self) ) then
-	if ( ItemRefTooltip:IsOwned(self) ) then -- Someone please tell me better way to do this!
+	if ( GameTooltip:IsOwned(self) ) then
+	--if ( ItemRefTooltip:IsOwned(self) ) then -- Bad alternative for GameTooltip
 		IconEnter(self);
 	end
 	CursorOnUpdate(self);
