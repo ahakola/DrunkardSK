@@ -294,7 +294,7 @@ end
 
 --on Token tab click
 local function ClickTTab()
-	PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB) --7.3 PlaySound("igCharacterInfoTab");
+	PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB) --7.3 PlaySound("igCharacterInfoTab"); -- SOUNDKIT.IG_CHARACTER_INFO_TAB = 841
 	PanelTemplates_SetTab(DSKListFrame, 2);
 	DSKListFrame.title:SetText("Token List");
 	DSKListFrame.selectedEntry = 0;
@@ -339,7 +339,7 @@ end
 
 --on Normal Tab click
 local function ClickNTab()
-	PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB) --7.3 PlaySound("igCharacterInfoTab");
+	PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB) --7.3 PlaySound("igCharacterInfoTab"); -- SOUNDKIT.IG_CHARACTER_INFO_TAB = 841
 	PanelTemplates_SetTab(DSKListFrame, 1);
 	DSKListFrame.title:SetText("Normal List");
 	DSKListFrame.selectedEntry = 0;
@@ -384,7 +384,7 @@ end
 
 --on i/e Tab click
 local function ClickITab()
-	PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB) --7.3 PlaySound("igCharacterInfoTab");
+	PlaySound(SOUNDKIT.IG_CHARACTER_INFO_TAB) --7.3 PlaySound("igCharacterInfoTab"); -- SOUNDKIT.IG_CHARACTER_INFO_TAB = 841
 	PanelTemplates_SetTab(DSKListFrame, 3);
 	DSKListFrame.title:SetText("Import/Export Lists");
 	DSKListFrame.add:Hide();
@@ -1848,7 +1848,7 @@ end
 --update high bidder
 function DrunkardSK:HighBidder(prefix, message, distribution, sender)
 	local success, text, class = DrunkardSK:Deserialize(message);
-	local color = RAID_CLASS_COLORS[class];
+	local color = RAID_CLASS_COLORS[class]; -- C_ClassColor and C_ClassColor.GetClassColor(class) or RAID_CLASS_COLORS[class] -- Only in Retail at the moment, we might need this in the future
 	DSKBidFrame.text:SetText(text);
 	DSKBidFrame.text:SetTextColor(color.r, color.g, color.b);
 end
