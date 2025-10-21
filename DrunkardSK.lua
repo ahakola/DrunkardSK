@@ -1583,9 +1583,10 @@ end
 --determine which list to use based on item
 function DrunkardSK:WhichList()
 	--local _, _, _, _, _, iType, iSubType, _, _, _ = GetItemInfo(ItemLink);
-	local _, _, _, _, _, iType, iSubType, _, _, _, _, _, _, _, _, itemSetID = C_Item and C_Item.GetItemInfo(ItemLink) or GetItemInfo(ItemLink) -- 7.3 Tier-item fix. -- Future proofing for future Classics
+	local _, _, _, _, _, iType, iSubType, _, _, _, _, classID, subclassID, _, _, itemSetID = C_Item.GetItemInfo(ItemLink);
 	--if (iType == "Miscellaneous") and (iSubType == "Junk") then
-	if itemSetID or (not itemSetID and (iType == AUCTION_CATEGORY_MISCELLANEOUS and iSubType == BAG_FILTER_JUNK)) then -- Checked from DE variant of GlobalStrings.lua, Misc can be also MISCELLANEOUS ?
+	--if itemSetID or (not itemSetID and (iType == AUCTION_CATEGORY_MISCELLANEOUS and iSubType == BAG_FILTER_JUNK)) then -- Checked from DE variant of GlobalStrings.lua, Misc can be also MISCELLANEOUS ?
+	if itemSetID or (classID == Enum.ItemClass.Miscellaneous and subclassID == Enum.ItemMiscellaneousSubclass.Junk) then
 		return "tList";
 	else
 		return "nList";
