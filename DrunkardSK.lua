@@ -551,12 +551,12 @@ end
 local function CloseBidClick(self, button, down)
 	if (HighName ~= "") then
 		local list = DrunkardSK:WhichList();
-		C_ChatInfo.SendChatMessage(HighName.." wins "..ItemLink.."!", "RAID"); -- C_ChatInfo.SendChatMessage was introduced in 11.2.0
+		C_ChatInfo.SendChatMessage(HighName.." wins "..ItemLink.."!", "RAID"); -- C_ChatInfo added in MoPClassic
 		GiveLoot(ItemLink, HighName) -- Added by Kelzu 1.3.6
 		Suicide(HighRank, list);
 		DrunkardSK:SendCommMessage("DSKBroadcast", DrunkardSK:Serialize(DrunkardSK.db.realm.nStamp, DrunkardSK.db.realm.nLength, DrunkardSK.db.realm.nList, DrunkardSK.db.realm.tStamp, DrunkardSK.db.realm.tLength, DrunkardSK.db.realm.tList), "GUILD");
 	elseif (HighRoller ~= "") then
-		C_ChatInfo.SendChatMessage(HighRoller.." wins "..ItemLink.."!", "RAID"); -- C_ChatInfo.SendChatMessage was introduced in 11.2.0
+		C_ChatInfo.SendChatMessage(HighRoller.." wins "..ItemLink.."!", "RAID"); -- C_ChatInfo added in MoPClassic
 		GiveLoot(ItemLink, HighRoller) -- Added by Kelzu 1.3.6
 	end
 
@@ -844,28 +844,28 @@ function DrunkardSK:OnEnable()
 	f.item:SetScript("OnClick", IconClick);
 
 	--bid button
-	f.bid = CreateFrame('Button', nil, f, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate was removed in 10.0.0
+	f.bid = CreateFrame('Button', nil, f, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate removed in WrathClassic
 	f.bid:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	f.bid:SetText('Bid')
 	f.bid:SetPoint('TOPLEFT', 30, -40)
 	f.bid:SetScript('OnClick', BidClick)
 
 	--pass button
-	f.pass = CreateFrame('Button', nil, f, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate was removed in 10.0.0
+	f.pass = CreateFrame('Button', nil, f, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate removed in WrathClassic
 	f.pass:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	f.pass:SetText('Pass')
 	f.pass:SetPoint('TOPRIGHT', -30, -65)
 	f.pass:SetScript('OnClick', PassClick)
 
 	--offspec button
-	f.offspec = CreateFrame('Button', nil, f, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate was removed in 10.0.0
+	f.offspec = CreateFrame('Button', nil, f, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate removed in WrathClassic
 	f.offspec:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	f.offspec:SetText('Offspec')
 	f.offspec:SetPoint('TOPRIGHT', -30, -40)
 	f.offspec:SetScript('OnClick', OffspecClick)
 
 	--retract button
-	f.retract = CreateFrame('Button', nil, f, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate was removed in 10.0.0
+	f.retract = CreateFrame('Button', nil, f, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate removed in WrathClassic
 	f.retract:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	f.retract:SetText('Retract')
 	f.retract:SetPoint('TOPLEFT', 30, -65)
@@ -936,14 +936,14 @@ function DrunkardSK:OnEnable()
 
 
 	--add button
-	l.add = CreateFrame('Button', 'ListAddButton', l, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate was removed in 10.0.0
+	l.add = CreateFrame('Button', 'ListAddButton', l, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate removed in WrathClassic
 	l.add:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	l.add:SetText('Add')
 	l.add:SetPoint('TOPLEFT', 35, -28)
 	l.add:SetScript('OnClick', AddClick)
 
 	--delete button
-	l.del = CreateFrame('Button', nil, l, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate was removed in 10.0.0
+	l.del = CreateFrame('Button', nil, l, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate removed in WrathClassic
 	l.del:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	l.del:SetText('Delete')
 	--l.del:SetPoint('LEFT', ListAddButton, 'RIGHT', 0, 0)
@@ -951,21 +951,21 @@ function DrunkardSK:OnEnable()
 	l.del:SetScript('OnClick', DeleteClick)
 
 	--murder button
-	l.murder = CreateFrame('Button', 'ListMurderButton', l, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate was removed in 10.0.0
+	l.murder = CreateFrame('Button', 'ListMurderButton', l, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate removed in WrathClassic
 	l.murder:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	l.murder:SetText('Murder')
 	l.murder:SetPoint('BOTTOMLEFT', 35, 38)
 	l.murder:SetScript('OnClick', MurderClick)
 
 	--close bid button
-	l.closeBid = CreateFrame('Button', nil, l, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate was removed in 10.0.0
+	l.closeBid = CreateFrame('Button', nil, l, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate removed in WrathClassic
 	l.closeBid:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	l.closeBid:SetText('Close Bid')
 	l.closeBid:SetPoint('BOTTOM', 0, 15)
 	l.closeBid:SetScript('OnClick', CloseBidClick)
 
 	--sync button
-	l.sync = CreateFrame('Button', nil, l, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate was removed in 10.0.0
+	l.sync = CreateFrame('Button', nil, l, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate removed in WrathClassic
 	l.sync:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	l.sync:SetText('Sync')
 	--l.sync:SetPoint('LEFT', ListMurderButton, 'RIGHT', 0, 0)
@@ -973,7 +973,7 @@ function DrunkardSK:OnEnable()
 	l.sync:SetScript('OnClick', SyncClick)
 
 	--export button
-	l.export = CreateFrame('Button', 'ExportButton', l, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate was removed in 10.0.0
+	l.export = CreateFrame('Button', 'ExportButton', l, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate removed in WrathClassic
 	l.export:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	l.export:SetText('Export')
 	l.export:SetPoint('BOTTOMLEFT', 35, 15)
@@ -981,7 +981,7 @@ function DrunkardSK:OnEnable()
 	l.export:Hide();
 
 	--import button
-	l.import = CreateFrame('Button', nil, l, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate was removed in 10.0.0
+	l.import = CreateFrame('Button', nil, l, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate removed in WrathClassic
 	l.import:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	l.import:SetText('Import')
 	--l.import:SetPoint('LEFT', ExportButton, 'RIGHT', 0, 0)
@@ -1327,14 +1327,14 @@ function DrunkardSK:OnEnable()
 	c.title:SetPoint('TOP', 0, -15)
 
 	--accept button
-	c.accept = CreateFrame('Button', 'AcceptButton', c, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate was removed in 10.0.0
+	c.accept = CreateFrame('Button', 'AcceptButton', c, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate removed in WrathClassic
 	c.accept:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	c.accept:SetText('Accept')
 	c.accept:SetPoint('BOTTOMLEFT', 35, 15)
 	c.accept:SetScript('OnClick', AcceptClick)
 
 	--decline button
-	c.decline = CreateFrame('Button', nil, c, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate was removed in 10.0.0
+	c.decline = CreateFrame('Button', nil, c, "UIPanelButtonTemplate") --"OptionsButtonTemplate") -- OptionsButtonTemplate removed in WrathClassic
 	c.decline:SetSize(90, 21) -- UIPanelButtonTemplate is 40x22, OptionsButtonTemplate was 90x21
 	c.decline:SetText('Decline')
 	c.decline:SetPoint('BOTTOMRIGHT', -35, 15)
@@ -1713,7 +1713,7 @@ function DrunkardSK:ReceiveBid(prefix, message, distribution, sender)
 					local roll = DrunkardSK:AddRoller(bidder);
 
 					--display in raid chat
-					C_ChatInfo.SendChatMessage(bidder.." rolls "..roll.." (1-1000)" , "RAID"); -- C_ChatInfo.SendChatMessage was introduced in 11.2.0
+					C_ChatInfo.SendChatMessage(bidder.." rolls "..roll.." (1-1000)" , "RAID"); -- C_ChatInfo added in MoPClassic
 					HighRoller, HighRoll = DrunkardSK:FindHighRoller();
 				end
 
@@ -1721,7 +1721,7 @@ function DrunkardSK:ReceiveBid(prefix, message, distribution, sender)
 
 				--if (BidsReceived == GetNumRaidMembers()) then
 				if (BidsReceived == GetNumGroupMembers()) then -- Fixed by Kelzu
-					C_ChatInfo.SendChatMessage("All bids received!" , "RAID"); -- C_ChatInfo.SendChatMessage was introduced in 11.2.0
+					C_ChatInfo.SendChatMessage("All bids received!" , "RAID"); -- C_ChatInfo added in MoPClassic
 				end
 			end
 
@@ -1808,7 +1808,7 @@ function DrunkardSK:RetractBid(prefix, message, distribution, sender)
 
 				if(bidType == "bid") then
 					DrunkardSK:RemoveBidder(bidder);
-					C_ChatInfo.SendChatMessage(bidder.." has retracted their bid." , "RAID"); -- C_ChatInfo.SendChatMessage was introduced in 11.2.0
+					C_ChatInfo.SendChatMessage(bidder.." has retracted their bid." , "RAID"); -- C_ChatInfo added in MoPClassic
 
 					if(BidList[1] ~= nil) then
 						HighRank = BidList[1];
@@ -1825,9 +1825,9 @@ function DrunkardSK:RetractBid(prefix, message, distribution, sender)
 				elseif (bidType == "offspec") then
 					DrunkardSK:RemoveRoller(bidder);
 					HighRoller, HighRoll = DrunkardSK:FindHighRoller();
-					C_ChatInfo.SendChatMessage(bidder.." has retracted their roll." , "RAID"); -- C_ChatInfo.SendChatMessage was introduced in 11.2.0
+					C_ChatInfo.SendChatMessage(bidder.." has retracted their roll." , "RAID"); -- C_ChatInfo added in MoPClassic
 				elseif (bidType == "pass") then
-					C_ChatInfo.SendChatMessage(bidder.." has retracted their pass." , "RAID"); -- C_ChatInfo.SendChatMessage was introduced in 11.2.0
+					C_ChatInfo.SendChatMessage(bidder.." has retracted their pass." , "RAID"); -- C_ChatInfo added in MoPClassic
 				end
 				DrunkardSK:UpdateWinner();
 			end
