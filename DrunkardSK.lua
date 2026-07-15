@@ -1461,6 +1461,7 @@ end
 
 --create list timestamp
 function DrunkardSK:CreateTimeStamp(oldstamp)
+	--[[
 	--local _, hour, minute = GameTime_GetGameTime(false);
 	local hour, minute = GetGameTime(); -- Future proofing
 	--local _, month, day, year = CalendarGetDate();
@@ -1480,6 +1481,9 @@ function DrunkardSK:CreateTimeStamp(oldstamp)
 	end
 
 	local newstr = year..month..day..hour..minute;
+	]]
+	local d = C_DateAndTime.GetCurrentCalendarTime()
+	local newstr = format("%d%02d%02d%02d%02d", d.year, d.month, d.monthDay, d.hour, d.minute) -- 202607160245 - 2026/07/16/02/45
 
 	local oldstr = strsub(tostring(oldstamp), 1, -3);
 	local oldcount = strsub(tostring(oldstamp), -2)
