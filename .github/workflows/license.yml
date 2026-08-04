@@ -15,7 +15,7 @@ jobs:
       - name: Update license year
         uses: p3lim/license-year-updater@v2
         with:
-          files: LICENSE.txt
+          files: LICENSE.md
           exclude: Aaron
 
       - name: Create pull request
