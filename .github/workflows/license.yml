@@ -16,7 +16,9 @@ jobs:
         uses: p3lim/license-year-updater@v2
         with:
           files: LICENSE.md
-          exclude: Aaron
+          exclude: |
+            Free Software Foundation, Inc.
+            Aaron
 
       - name: Create pull request
         uses: peter-evans/create-pull-request@v8
